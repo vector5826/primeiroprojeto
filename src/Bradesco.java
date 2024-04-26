@@ -4,17 +4,20 @@ public class Bradesco {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+//      Variaveis
         String nome = "Victor Hugo";
         String tipoDeConta = "Corrente";
         double saldo = 1599.99;
         int opcao = 0;
 
+//      Tela inicial
         System.out.println("***********************");
         System.out.println("\nNome do cliente: " + nome);
         System.out.println("Tipo de Conta: " + tipoDeConta);
         System.out.println("Saldo atual: " + saldo);
         System.out.println("\n***********************");
 
+//      Menu
         String menu = """
                 Operações
                 1 - Consultar Saldo
@@ -24,15 +27,16 @@ public class Bradesco {
                 Digite a opção desejada:
                 """;
 
+//      Loop
         while (opcao !=4){
             System.out.println(menu);
             opcao = scanner.nextInt();
 
-
+//          Condições
             if (opcao == 1 ){
-                System.out.println("saldo atualizado é: " + saldo);
+                System.out.println("saldo atual é de: " + saldo);
             } else if (opcao == 2) {
-                System.out.println("Qual o Valor para o Pix");
+                System.out.println("Qual o Valor para transferir o Pix?");
                 double valor = scanner.nextDouble();
                 if (valor > saldo){
                     System.out.println("Saldo indisponivel");
@@ -41,7 +45,7 @@ public class Bradesco {
                     System.out.println("Saldo De: " + saldo);
                 }
             } else if (opcao == 3) {
-                System.out.println("valor recebido: ");
+                System.out.println("valor De deposito: ");
                 double valor = scanner.nextDouble();
                 saldo += valor;
                 System.out.println("Novo saldo: " + saldo);
